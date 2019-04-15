@@ -1,4 +1,3 @@
-
 import math
 higher_than = 500
 def count_divisors(n):
