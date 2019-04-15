@@ -26,9 +26,12 @@ adjacent_numbers = 4
 
 for i in range(0, len(grid) - adjacent_numbers - 1):
     for j in range(0, len(grid) - adjacent_numbers - 1):
-        reduce(lambda x, y: x * y, [grid[i][j + x] for x in range(adjacent_numbers)]),  # Horizontal
-
-
-
+        max_number = max(
+            reduce(lambda x, y: x * y, [grid[i][j + x] for x in range(adjacent_numbers)]),  # Horizontal
+            reduce(lambda x, y: x * y, [grid[i + x][j] for x in range(adjacent_numbers)]),  # Vertical
+            reduce(lambda x, y: x * y, [grid[i + x][j + x] for x in range(adjacent_numbers)]), # Right Diagonal
+            reduce(lambda x, y: x * y, [grid[j + x][i + (adjacent_numbers - 1 - x)] for x in range(adjacent_numbers)]), # Left Diagonal
+            max_number
+        )
 
 print(max_number)
