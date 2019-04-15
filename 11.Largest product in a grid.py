@@ -23,7 +23,6 @@ grid = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8]
 
 max_number = 0
 adjacent_numbers = 4
-
 for i in range(0, len(grid) - adjacent_numbers - 1):
     for j in range(0, len(grid) - adjacent_numbers - 1):
         max_number = max(
